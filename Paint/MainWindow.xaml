@@ -6,40 +6,44 @@
         xmlns:local="clr-namespace:Paint"
         mc:Ignorable="d"
         Title="Paint" Height="450" Width="800">
+
     <Grid>
+        <ToolBar HorizontalAlignment="Center" Height="34" VerticalAlignment="Top" Width="800">
 
+            <Button Content="Clear" Width="60" Height="26" VerticalAlignment="Top" Click="ClearButton_Click"/>
 
-        <ToolBar Margin="0,0,0,362">
-            <Button Content="Clear"  Width="80" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Click="ClearButton_Click"/>
-            <Label Content="Brush Size:" VerticalAlignment="Top" HorizontalAlignment="Left"  >
-            </Label>
-        <ComboBox Width="50" Height="25" Name="brushSize" Background="White"  VerticalAlignment="Top" HorizontalAlignment="Left" SelectionChanged="ComboBox_SelectionChanged">
-                <ComboBoxItem Content="2"/>
-                <ComboBoxItem Content="4"/>
-                <ComboBoxItem Content="6"/>
-                <ComboBoxItem Content="8"/>
-                <ComboBoxItem Content="10"/>
-
+           
+            <Label Content="Brush Size:" Width="80" Height="32"/>
+            <ComboBox Name="BrushSize" HorizontalAlignment="Left" Width="50" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
+                <ComboBoxItem>8</ComboBoxItem>
+                <ComboBoxItem>10</ComboBoxItem>
             </ComboBox>
 
+            <Label Content="Brush Color:" Height="26"/>
+            <ComboBox Name="BrushColor" HorizontalAlignment="Left" Width="80" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem>Red</ComboBoxItem>
+                <ComboBoxItem>Green</ComboBoxItem>
+                <ComboBoxItem>Yellow</ComboBoxItem>
+                <ComboBoxItem>Blue</ComboBoxItem>
+                <ComboBoxItem>Black</ComboBoxItem>
+            </ComboBox>
 
-        <Label Content="Brush Color:" VerticalAlignment="Top" HorizontalAlignment="Left" />
-        <ComboBox Width="100" Height="25"  VerticalAlignment="Top" HorizontalAlignment="Left">
-            <ComboBoxItem Content="Red"/> 
-            
-            <ComboBoxItem Content="Blue"/>
-            <ComboBoxItem Content="Green"/>
-            <ComboBoxItem Content="Yellow"/>
-        </ComboBox>
-        <Label Content="Mode" VerticalAlignment="Top" HorizontalAlignment="Left" />
-        <ComboBox Width="100" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" >
-            <ComboBoxItem Content="Free Draw"/>
-            <ComboBoxItem Content="Straight Line"/>
-        </ComboBox>
-        <Line Name="line7" Stroke="Black" StrokeThickness="4" X1="10" X2="40" Y1="70" Y2="70" />
-            </ToolBar>
+            <Label Content="Mode:" Width="47" VerticalAlignment="Center"/>
+            <ComboBox Name="Mode" HorizontalAlignment="Left" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem>Free Draw</ComboBoxItem>
+                <ComboBoxItem>Straight Line</ComboBoxItem>
+            </ComboBox>
+        </ToolBar>
 
-                <Canvas  MouseDown="DrawingCanvas_MouseDown" MouseLeave="DrawingCanvas_MouseLeave" Background="Transparent" Name="DrawingCanvas"/>
-
+        <Canvas Name="DrawingCanvas" 
+                MouseDown="DrawingCanvas_MouseDown" 
+                MouseMove="DrawingCanvas_MouseMove" 
+                MouseUp="DrawingCanvas_MouseUp" 
+                MouseLeave="DrawingCanvas_MouseLeave"
+                Background="White" 
+                Margin="5,47,5,5"/>
     </Grid>
 </Window>
