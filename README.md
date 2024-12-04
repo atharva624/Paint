@@ -21,4 +21,7 @@ This is a simple paint application built using **C#** and **WPF (Windows Present
 
 3. Build and run the project.
 
+![Paint](https://github.com/user-attachments/assets/75c00bf3-0996-4c06-afa3-6a67439b4310)
+
+
 
